@@ -5,7 +5,8 @@ import styled, { keyframes } from 'styled-components';
 
 class Card extends Component {
 	state = {
-		showInfo: false
+		showInfo: false,
+		displayCard: true
 	};
 
 	showDetails = () => this.setState({ showInfo: !this.state.showInfo });
@@ -33,36 +34,40 @@ class Card extends Component {
 			publisher,
 			first_appearance
 		} = this.props.eachData;
-		const { showInfo } = this.state;
+		const { showInfo, displayCard } = this.state;
 		return (
-			<div className='card blue-grey darken-1'>
-				<div className='card-content white-text'>
-					<span onClick={this.showDetails} className='card-title hover'>
-						{superhero}
-						<i className='right small material-icons'>
-							{!showInfo ? 'arrow_drop_down' : 'arrow_drop_up'}
-						</i>
-					</span>
-					{showInfo && (
-						<UlStyle>
-							<ul>
-								<li>
-									<strong>Alter ego: </strong>
-									{alter_ego}
-								</li>
-								<li>
-									<strong>Publisher: </strong>
-									{publisher}
-								</li>
-								<li>
-									<strong>First appeared: </strong>
-									{first_appearance}
-								</li>
-							</ul>
-						</UlStyle>
-					)}
-				</div>
-			</div>
+			<>
+				{displayCard && (
+					<div className='card blue-grey darken-1'>
+						<div className='card-content white-text'>
+							<span onClick={this.showDetails} className='card-title hover'>
+								{superhero}
+								<i className='right small material-icons'>
+									{!showInfo ? 'arrow_drop_down' : 'arrow_drop_up'}
+								</i>
+							</span>
+							{showInfo && (
+								<UlStyle>
+									<ul>
+										<li>
+											<strong>Alter ego: </strong>
+											{alter_ego}
+										</li>
+										<li>
+											<strong>Publisher: </strong>
+											{publisher}
+										</li>
+										<li>
+											<strong>First appeared: </strong>
+											{first_appearance}
+										</li>
+									</ul>
+								</UlStyle>
+							)}
+						</div>
+					</div>
+				)}
+			</>
 		);
 	}
 }
