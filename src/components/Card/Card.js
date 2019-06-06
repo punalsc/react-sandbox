@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
-import styled, { keyframes } from 'styled-components';
+import Button from '../Button/Button';
 
-//import PropTypes from 'prop-types';
+import { UlStyle } from './Card.style';
 
 class Card extends Component {
 	state = {
@@ -9,25 +9,11 @@ class Card extends Component {
 		displayCard: true
 	};
 
-	showDetails = () => this.setState({ showInfo: !this.state.showInfo });
+	showDetails = objKey => this.setState({ [objKey]: !this.state[objKey] });
+
+	deleteCard = () => this.setState({ displayCard: false });
 
 	render() {
-		const keyFrameExample = keyframes`
-			0% {
-				opacity: 0;
-			}
-			100% {
-				opacity: 1;
-		}`;
-
-		const UlStyle = styled.ul`
-			opacity: 1;
-			animation-name: ${keyFrameExample};
-			animation-iteration-count: 1;
-			animation-timing-function: ease-in;
-			animation-duration: 0.5s;
-		`;
-
 		const {
 			superhero,
 			alter_ego,
@@ -35,17 +21,28 @@ class Card extends Component {
 			first_appearance
 		} = this.props.eachData;
 		const { showInfo, displayCard } = this.state;
+
 		return (
 			<>
 				{displayCard && (
 					<div className='card blue-grey darken-1'>
 						<div className='card-content white-text'>
-							<span onClick={this.showDetails} className='card-title hover'>
+							<Button
+								onClick={this.deleteCard}
+								buttonClass='btn-floating btn-large red right'
+								spanClass={'title'}
+								iconClass={'small material-icons'}
+							/>
+
+							<button
+								onClick={() => this.showDetails('showInfo')}
+								className='card-title hover waves-effect waves-light btn'
+							>
 								{superhero}
 								<i className='right small material-icons'>
 									{!showInfo ? 'arrow_drop_down' : 'arrow_drop_up'}
 								</i>
-							</span>
+							</button>
 							{showInfo && (
 								<UlStyle>
 									<ul>

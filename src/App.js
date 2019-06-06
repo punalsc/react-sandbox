@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import Header from './components/Header';
-import Cards from './components/Cards';
+import Header from './components/Header/Header';
+import Cards from './components/Cards/Cards';
 
 import 'materialize-css/dist/css/materialize.min.css';
 import './App.css';

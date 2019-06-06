@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import Card from './Card';
-import { superHeroData } from '../Data';
+import Card from '../Card/Card';
+import { superHeroData } from '../../Data';
 
 class Cards extends Component {
 	state = {
