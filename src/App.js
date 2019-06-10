@@ -18,7 +18,6 @@ class App extends Component {
 								const { header } = value;
 								return <Header branding={header} />;
 							}}
-							{/* <Header branding={header.header} /> */}
 						</Consumer>
 
 						<Cards />
