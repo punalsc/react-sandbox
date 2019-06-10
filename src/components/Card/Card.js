@@ -21,6 +21,7 @@ class Card extends Component {
 			first_appearance
 		} = this.props.eachData;
 		const { showInfo, displayCard } = this.state;
+		const { showDetails, deleteCard } = this;
 
 		return (
 			<>
@@ -28,14 +29,14 @@ class Card extends Component {
 					<div className='card blue-grey darken-1'>
 						<div className='card-content white-text'>
 							<Button
-								onClick={this.deleteCard}
+								onClick={deleteCard}
 								buttonClass='btn-floating btn-large red right'
 								spanClass={'title'}
 								iconClass={'small material-icons'}
 							/>
 
 							<button
-								onClick={() => this.showDetails('showInfo')}
+								onClick={() => showDetails('showInfo')}
 								className='card-title hover waves-effect waves-light btn'
 							>
 								{superhero}
