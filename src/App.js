@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 import Header from './components/Header/Header';
 import Cards from './components/Cards/Cards';
 
@@ -7,25 +7,23 @@ import './App.css';
 
 import { Provider, Consumer } from './context';
 
-class App extends Component {
-	render() {
-		return (
-			<Provider>
-				<div className='App'>
-					<div className='container'>
-						<Consumer>
-							{value => {
-								const { header } = value;
-								return <Header branding={header} />;
-							}}
-						</Consumer>
+const App = () => {
+	return (
+		<Provider>
+			<div className='App'>
+				<div className='container'>
+					<Consumer>
+						{value => {
+							const { header } = value;
+							return <Header branding={header} />;
+						}}
+					</Consumer>
 
-						<Cards />
-					</div>
+					<Cards />
 				</div>
-			</Provider>
-		);
-	}
-}
+			</div>
+		</Provider>
+	);
+};
 
 export default App;
