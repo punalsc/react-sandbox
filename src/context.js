@@ -2,6 +2,21 @@ import React, { Component } from 'react';
 
 const Context = React.createContext();
 
+const reducer = (state, action) => {
+	switch (action.type) {
+		case 'DELETE_CARD':
+			return {
+				...state,
+				superHeroData: state.superHeroData.filter(
+					superHeroName => superHeroName.superhero !== action.payload
+				)
+			};
+
+		default:
+			return state;
+	}
+};
+
 export class Provider extends Component {
 	state = {
 		header: 'List of Super Heroes',
@@ -148,7 +163,8 @@ export class Provider extends Component {
 				first_appearance: 'The Fantastic Four #48',
 				characters: 'Norrin Radd'
 			}
-		]
+		],
+		dispatch: action => this.setState(state => reducer(state, action))
 	};
 
 	render() {
