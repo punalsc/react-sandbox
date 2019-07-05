@@ -33,41 +33,49 @@ class Card extends Component {
 						const { dispatch } = value;
 						return (
 							<div className='card blue-grey darken-1'>
-								<div className='card-content white-text'>
-									<Button
-										onClick={this.onClickDelete.bind(this, superhero, dispatch)}
-										buttonClass='btn-floating btn-large red right'
-										spanClass={'title'}
-										iconClass={'small material-icons'}
-									/>
+								<div className='row'>
+									<div className='col s12'>
+										<div className='card-content white-text'>
+											<Button
+												onClick={this.onClickDelete.bind(
+													this,
+													superhero,
+													dispatch
+												)}
+												buttonClass='btn-floating btn-large red right'
+												spanClass={'title'}
+												iconClass={'small material-icons'}
+											/>
 
-									<button
-										onClick={() => showDetails('showInfo')}
-										className='card-title hover waves-effect waves-light btn'
-									>
-										{superhero}
-										<i className='right small material-icons'>
-											{!showInfo ? 'arrow_drop_down' : 'arrow_drop_up'}
-										</i>
-									</button>
-									{showInfo && (
-										<UlStyle>
-											<ul>
-												<li>
-													<strong>Alter ego: </strong>
-													{alter_ego}
-												</li>
-												<li>
-													<strong>Publisher: </strong>
-													{publisher}
-												</li>
-												<li>
-													<strong>First appeared: </strong>
-													{first_appearance}
-												</li>
-											</ul>
-										</UlStyle>
-									)}
+											<button
+												onClick={() => showDetails('showInfo')}
+												className='card-title hover waves-effect waves-light btn'
+											>
+												{superhero}
+												<i className='right small material-icons'>
+													{!showInfo ? 'arrow_drop_down' : 'arrow_drop_up'}
+												</i>
+											</button>
+											{showInfo && (
+												<UlStyle>
+													<ul>
+														<li>
+															<strong>Alter ego: </strong>
+															{alter_ego}
+														</li>
+														<li>
+															<strong>Publisher: </strong>
+															{publisher}
+														</li>
+														<li>
+															<strong>First appeared: </strong>
+															{first_appearance}
+														</li>
+													</ul>
+												</UlStyle>
+											)}
+										</div>
+									</div>
 								</div>
 							</div>
 						);
