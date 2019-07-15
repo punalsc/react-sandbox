@@ -1,6 +1,7 @@
 import React from 'react';
 import Header from './components/Header/Header';
 import Cards from './components/Cards/Cards';
+import AddSuperHero from './components/Form/AddSuperHero';
 
 import 'materialize-css/dist/css/materialize.min.css';
 import './App.css';
@@ -19,6 +20,7 @@ const App = () => {
 						}}
 					</Consumer>
 
+					<AddSuperHero />
 					<Cards />
 				</div>
 			</div>
