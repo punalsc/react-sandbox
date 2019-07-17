@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { Consumer } from '../../context';
+import Input from '../Input/Input';
 
 class AddSuperHero extends Component {
 	state = {
@@ -51,60 +52,17 @@ class AddSuperHero extends Component {
 									<fieldset style={noBorder}>
 										<div className='row'>
 											<div className='input-field col s12'>
-												<input
-													placeholder='Enter Superhero name'
-													id='superhero_name'
-													type='text'
-													className='validate white-text'
-													value={superhero}
-													name='superhero'
-													onChange={onChange}
-												/>
-												<label htmlFor='superhero_name' className='active'>
-													Superhero
-												</label>
+												<Input placeholder='Enter Superhero name' id='superhero_name' type='text' inputClass='validate white-text' value={superhero} name='superhero' onChange={onChange} labelClass='active' labelTitle='Superhero' />
 											</div>
 											<div className='input-field col s6'>
-												<input
-													placeholder='Enter alter ego'
-													id='alter_ego_name'
-													type='text'
-													className='validate white-text'
-													value={alter_ego}
-													name='alter_ego'
-													onChange={onChange}
-												/>
-												<label htmlFor='alter_ego_name' className='active'>
-													Alter ego
-												</label>
+												<Input placeholder='Enter alter ego' id='alter_ego_name' type='text' inputClass='validate white-text' value={alter_ego} name='alter_ego' onChange={onChange} labelClass='active' labelTitle='Alter ego' />
 											</div>
 											<div className='input-field col s6'>
-												<input
-													className='white-text validate'
-													placeholder='Enter publisher'
-													id='publisher'
-													type='text'
-													value={publisher}
-													name='publisher'
-													onChange={onChange}
-												/>
-												<label htmlFor='publisher' className='active'>
-													Publisher
-												</label>
+												<Input placeholder='Enter publisher' id='publisher' type='text' inputClass='validate white-text' value={publisher} name='alter_ego' onChange={onChange} labelClass='active' labelTitle='Publisher' />
 											</div>
 											<div className='input-field col s12'>
-												<input
-													placeholder='Enter the first appearance in a comic'
-													id='first_appearance'
-													type='text'
-													className='validate white-text'
-													value={first_appearance}
-													onChange={onChange}
-													name='first_appearance'
-												/>
-												<label htmlFor='first_appearance' className='active'>
-													First appearance
-												</label>
+												<Input placeholder='Enter the first appearance in a comic' id='first_appearance' type='text' inputClass='validate white-text' value={first_appearance} name='first_appearance' onChange={onChange} labelClass='active' labelTitle='First appearance' />
+												
 											</div>
 										</div>
 										<button
