@@ -11,6 +11,11 @@ const reducer = (state, action) => {
 					superHeroName => superHeroName.superhero !== action.payload
 				)
 			};
+		case 'ADD_CARD':
+			return {
+				...state,
+				superHeroData: [action.payload, ...state.superHeroData]
+			};
 
 		default:
 			return state;
